@@ -1,0 +1,170 @@
+.footer {
+  background-color: $bgc-color;
+}
+
+.footer__container {
+  display: flex;
+  align-items: baseline;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.address {
+  @extend %list;
+
+  margin-top: 20px;
+
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.address__item:not(:first-child) {
+  margin-top: 9px;
+}
+
+.address__contacts {
+  color: #ffffff;
+}
+
+.address__link {
+  transition: color $anim-duration $cubic;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.text-title {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.join {
+  margin-left: 70px;
+}
+
+.join__list {
+  @extend %list;
+
+  display: inline-flex;
+}
+
+.join__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.join__link {
+  transition: color $anim-duration $cubic, background-color $anim-duration $cubic;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+
+.join__icon {
+  fill: #ffffff;
+}
+
+.form-sub {
+  display: flex;
+  margin-left: auto;
+}
+
+.form-sub__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-sub__label {
+  display: inline-flex;
+}
+
+.form-sub__input {
+  display: flex;
+  align-items: baseline;
+  padding-left: 16px;
+
+  width: 358px;
+  height: 50px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+
+  color: #ffffff;
+  background-color: $bgc-color;
+
+  &:hover,
+  &:focus {
+    border-color: inherit;
+    outline: transparent;
+  }
+
+  &:placeholder-shown {
+    font-size: 16px;
+    line-height: 1.25;
+
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.form-sub__button {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 12px;
+}
+
+.form-sub__btn {
+  transition: background-color $anim-duration $cubic;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
+  border: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  color: #ffffff;
+  background-color: $accent-color;
+
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+  }
+}
+
+.form-sub__icon {
+  margin-left: 10px;
+
+  fill: #ffffff;
+}

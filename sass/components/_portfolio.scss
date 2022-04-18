@@ -1,0 +1,103 @@
+.btn {
+  @extend %list;
+
+  display: flex;
+  justify-content: center;
+}
+
+.btn__wrapper:not(:last-child) {
+  margin-right: 8px;
+}
+
+.btn__item {
+  @extend %button;
+
+  transition: box-shadow $anim-duration $cubic, color $anim-duration $cubic,
+    background-color $anim-duration $cubic;
+}
+
+.portfolio {
+  @extend %list;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: -30px;
+  margin-left: -30px;
+}
+
+.portfolio__item {
+  margin-bottom: $main-size;
+  margin-left: $main-size;
+}
+
+.portfolio__link {
+  transition: box-shadow $anim-duration $cubic;
+
+  display: block;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.card__text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform $anim-duration $cubic;
+
+  display: flex;
+  padding: 63px 24px;
+
+  line-height: 1.56;
+
+  color: #ffffff;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  .portfolio__link:hover &,
+  .portfolio__link:focus & {
+    transform: translateY(0);
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-thumb {
+  padding: 20px 24px;
+
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #eeeeee;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #eeeeee;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #eeeeee;
+}
+
+.card-thumb__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+
+  color: $title-color;
+}
+
+.card-thumb__text {
+  margin-top: 4px;
+
+  font-size: 16px;
+  line-height: 1.87;
+
+  color: $text-color;
+}
