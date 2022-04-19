@@ -7,8 +7,6 @@
 }
 
 .header__container {
-  @extend %container;
-
   display: flex;
   align-items: center;
 }

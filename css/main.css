@@ -42,20 +42,6 @@ body {
   background-color: #ffffff;
 }
 
-.header__container, .container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 1200px;
-}
-
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-  background-color: #ffffff;
-}
-
 .nav__list, .contacts, .benefits, .work, .team, .social-links, .clients, .address, .join__list, .btn, .portfolio {
   padding-left: 0;
   list-style: none;
@@ -90,6 +76,14 @@ body {
   line-height: 1.17;
   text-align: center;
   color: #212121;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 1200px;
 }
 
 .header {
@@ -250,6 +244,12 @@ body {
 
 .hero__button:hover, .hero__button:focus {
   background-color: #188ce8;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  background-color: #ffffff;
 }
 
 .benefits {
