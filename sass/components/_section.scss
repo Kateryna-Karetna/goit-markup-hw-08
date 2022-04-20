@@ -1,6 +1,11 @@
 .section {
-  padding-top: $section-padding;
-  padding-bottom: $section-padding;
+  padding-top: $section-padding-mobile;
+  padding-bottom: $section-padding-mobile;
 
   background-color: #ffffff;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+  }
 }

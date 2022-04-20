@@ -7,8 +7,10 @@
 }
 
 .header__container {
-  display: flex;
-  align-items: center;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .nav {
@@ -19,12 +21,16 @@
 .nav__list {
   @extend %list;
 
-  display: flex;
+  display: none;
 
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
 }
 
 .nav__link {
@@ -69,29 +75,43 @@
 .contacts {
   @extend %list;
 
-  display: flex;
-  margin-left: auto;
-  align-items: center;
+  display: none;
 
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    align-items: flex-start;
 
-  &:first-child {
-    margin-right: 50px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+
+    &:first-child {
+      margin-right: 50px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+
+    font-size: 14px;
+    line-height: 1.14;
   }
 }
 
 .contacts__item:first-child {
-  margin-right: 30px;
+  margin-bottom: 10px;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 0;
+    margin-right: $main-size;
+  }
 }
 
 .contacts__link {
   transition: color $anim-duration $cubic;
-
-  display: flex;
-  align-items: center;
-  padding: 32px 0;
 
   color: $text-color;
 
@@ -99,10 +119,39 @@
   &:focus {
     color: $accent-color;
   }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: center;
+    padding: 32px 0;
+  }
 }
 
 .contacts__icon {
-  margin-right: 10px;
+  margin-right: 8px;
 
   fill: currentColor;
+
+  @media screen and (min-width: $tablet) {
+    width: 14px;
+    height: 10px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 10px;
+    width: 16px;
+    height: 12px;
+  }
+}
+
+.contacts__icon--size {
+  @media screen and (min-width: $tablet) {
+    width: 10px;
+    height: 14px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 10px;
+    height: 16px;
+  }
 }

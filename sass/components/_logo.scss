@@ -1,12 +1,25 @@
 .logo {
-  margin-right: 93px;
-
+  padding: 16px 0;
+  font-size: 24px;
+  line-height: 1.17;
   font-family: $secondary-font;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
 
   color: $accent-color;
+
+  @media screen and (min-width: $tablet) {
+    padding: 26px 0;
+    margin-right: 88px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 24px;
+    padding-bottom: 25px;
+    margin-right: 93px;
+
+    font-size: 26px;
+    line-height: 1.19;
+  }
 }
 
 .logo__part {
@@ -18,6 +31,8 @@
 
   display: block;
   margin-right: 0;
+  margin-bottom: 20px;
+  padding: 0;
 }
 
 .logo__inverse {

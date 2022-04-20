@@ -2,11 +2,32 @@
   background-color: $bgc-secondary-color;
 }
 
+.section__title {
+  @extend %title;
+
+  font-size: 28px;
+  line-height: 1.18;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 36px;
+    line-height: 1.17;
+  }
+}
+
 .team {
   @extend %list;
 
-  display: flex;
-  margin-top: 50px;
+  margin-top: $main-size;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 50px;
+  }
 }
 
 .team__item {
@@ -17,13 +38,41 @@
   background-color: #ffffff;
 
   &:not(:last-child) {
-    margin-right: 30px;
+    margin-bottom: $main-size;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 354px;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(-n + 2) {
+      margin-bottom: $main-size;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 270px;
+
+    &:nth-child(-n + 2) {
+      margin-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      margin-right: $main-size;
+    }
   }
 }
 
 .team__wrapper {
   padding-top: $main-size;
-  padding-bottom: $main-size;
+  padding-bottom: 24px;
+
+  @media screen and (min-width: $desktop) {
+    padding-bottom: $main-size;
+  }
 }
 
 .team__title {

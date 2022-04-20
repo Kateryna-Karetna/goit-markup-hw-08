@@ -3,24 +3,53 @@
 }
 
 .footer__container {
-  display: flex;
-  align-items: baseline;
   padding-top: 60px;
   padding-bottom: 60px;
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.footer__wrapper {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-bottom: 60px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.footer__box {
+  margin-bottom: 60px;
+  text-align: center;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0;
+  }
 }
 
 .address {
   @extend %list;
 
-  margin-top: 20px;
-
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 20px;
+  }
 }
 
 .address__item:not(:first-child) {
-  margin-top: 9px;
+  margin-top: 8px;
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 9px;
+  }
 }
 
 .address__contacts {
@@ -50,7 +79,16 @@
 }
 
 .join {
-  margin-left: 70px;
+  margin-bottom: 60px;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-left: 70px;
+  }
 }
 
 .join__list {
@@ -87,13 +125,19 @@
 }
 
 .form-sub {
-  display: flex;
-  margin-left: auto;
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    margin-left: auto;
+  }
 }
 
 .form-sub__container {
-  display: flex;
-  flex-direction: column;
+  text-align: center;
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .form-sub__label {
@@ -104,8 +148,7 @@
   display: flex;
   align-items: baseline;
   padding-left: 16px;
-
-  width: 358px;
+  width: 450px;
   height: 50px;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -127,12 +170,28 @@
 
     color: rgba(255, 255, 255, 0.6);
   }
+
+  @media screen and (min-width: $tablet) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: baseline;
+    width: 358px;
+  }
 }
 
 .form-sub__button {
-  display: flex;
-  align-items: flex-end;
-  margin-left: 12px;
+  margin-top: 20px;
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 12px;
+    margin-top: 0;
+  }
 }
 
 .form-sub__btn {
@@ -141,6 +200,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   width: 200px;
   height: 50px;
 

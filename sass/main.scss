@@ -1,6 +1,9 @@
 // variables
 @import './utils/variables';
 
+// breakpoints
+@import './utils/breakpoints';
+
 // visually-hidden
 @import './utils/visually-hidden';
 
@@ -18,6 +21,12 @@
 
 // logo
 @import './/components/logo';
+
+// menu-btn
+@import './/components/menu-btn';
+
+// mobile-menu
+@import './/components/mobile-menu';
 
 // hero-section
 @import './components/index-hero';
