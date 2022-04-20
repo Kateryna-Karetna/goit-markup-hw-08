@@ -132,7 +132,7 @@
 
   fill: currentColor;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
     width: 14px;
     height: 10px;
   }
@@ -145,7 +145,7 @@
 }
 
 .contacts__icon--size {
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
     width: 10px;
     height: 14px;
   }

@@ -15,16 +15,15 @@
 .benefits__item {
   padding: 0;
 
-  &:not(:last-child) {
-    margin-bottom: $main-size;
+  @media screen and (max-width: 479px) {
+    &:not(:last-child) {
+      margin-bottom: $main-size;
+    }
   }
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
     width: 354px;
 
-    &:not(:last-child) {
-      margin-bottom: 0;
-    }
     &:nth-child(-n + 2) {
       margin-bottom: $main-size;
     }
@@ -32,10 +31,6 @@
 
   @media screen and (min-width: $desktop) {
     width: 270px;
-
-    &:nth-child(-n + 2) {
-      margin-bottom: 0;
-    }
   }
 }
 
@@ -49,7 +44,7 @@
 
   background-color: #f5f4fa;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
     width: 354px;
   }
 

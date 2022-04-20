@@ -19,6 +19,7 @@
     align-items: baseline;
     margin-bottom: 60px;
   }
+
   @media screen and (min-width: $desktop) {
     margin-bottom: 0;
   }
@@ -27,8 +28,13 @@
 .footer__box {
   margin-bottom: 60px;
   text-align: center;
+
   @media screen and (min-width: $tablet) {
     margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    text-align: start;
   }
 }
 
@@ -88,6 +94,7 @@
 
   @media screen and (min-width: $desktop) {
     margin-left: 70px;
+    text-align: start;
   }
 }
 
