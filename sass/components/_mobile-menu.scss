@@ -1,39 +1,31 @@
 .mobile-menu {
-  @media screen and (max-width: $tablet) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity $anim-duration $cubic, visibility $anim-duration $cubic;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
 
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #ffffff;
+
+  &.is-hidden {
     opacity: 0;
-
-    background-color: #ffffff;
+    visibility: hidden;
+    pointer-events: none;
   }
+
   @media screen and (min-width: $tablet) {
+    display: none;
   }
 }
 
 .mobile-menu__container {
-  transform: translateX(100%);
-  transition: transform $anim-duration $cubic;
-  visibility: hidden;
-  pointer-events: none;
-
-  &.is-open {
-    transform: translateX(0);
-    visibility: visible;
-    pointer-events: initial;
-  }
-
-  width: 100%;
-  height: 100%;
-}
-
-.mobile-menu__wrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 0 40px 48px 40px;
+  padding: 48px 40px;
 }
 
 .mobile-nav {
@@ -61,13 +53,7 @@
   color: $accent-color;
 }
 
-.mobile-menu__box {
-  align-items: flex-end;
-}
-
 .mobile-contacts {
-  //   margin-top: 306px;
-
   font-size: 24px;
   line-height: 1.17;
   color: $text-color;
@@ -77,6 +63,10 @@
   &:not(:last-child) {
     margin-bottom: 32px;
   }
+}
+
+.mobile-contacts__link {
+  color: $text-color;
 }
 
 .mobile-contacts__link--active {
