@@ -42,7 +42,7 @@ body {
   background-color: #ffffff;
 }
 
-.nav__list, .contacts, .mobile-nav__list, .mobile-contacts__list, .benefits, .work, .team, .social-links, .clients, .address, .join__list, .btn, .portfolio {
+.nav__list, .contacts, .mobile-nav__list, .mobile-contacts__list, .mobile-social-links__list, .benefits, .work, .team, .social-links, .clients, .address, .join__list, .btn, .portfolio {
   padding-left: 0;
   list-style: none;
 }
@@ -301,10 +301,12 @@ body {
 }
 
 .menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 15px;
   display: block;
-  margin-left: auto;
   padding: 0;
-  z-index: 10;
+  z-index: 11;
   background-color: transparent;
   border: transparent;
 }
@@ -319,46 +321,55 @@ body {
   }
 }
 
-.menu-btn__icon-close {
-  opacity: 0;
-}
-
-.menu-btn.is-open .menu-btn__icon-close {
-  opacity: 0;
-}
-
-.menu-btn.is-open .menu-btn__icon-open {
+.menu-btn__icon--open {
   opacity: 1;
 }
 
-.mobile-menu {
+.menu-btn__icon--close {
+  opacity: 0;
+}
+
+.menu-btn.is-active .menu-btn__icon--open {
+  opacity: 0;
+}
+
+.menu-btn.is-active .menu-btn__icon--close {
+  opacity: 1;
+}
+
+.mobile-overlay {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 1;
-  visibility: visible;
-  pointer-events: initial;
+  left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 10;
+  transform: translateX(100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #ffffff;
 }
 
-.mobile-menu.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+.mobile-overlay.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 40px;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 768px) {
   .mobile-menu {
     display: none;
   }
-}
-
-.mobile-menu__container {
-  padding: 48px 40px;
 }
 
 .mobile-nav {
@@ -381,6 +392,7 @@ body {
 }
 
 .mobile-contacts {
+  margin-bottom: 64px;
   font-size: 24px;
   line-height: 1.17;
   color: #757575;
@@ -395,6 +407,56 @@ body {
 }
 
 .mobile-contacts__link--active {
+  color: #2196f3;
+}
+
+.mobile-contacts__list {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+}
+
+.mobile-social-links__list {
+  position: relative;
+  display: flex;
+}
+
+.mobile-social-links__item:first-child::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 96px;
+  display: block;
+  height: 22px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mobile-social-links__item:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 175px;
+  display: block;
+  height: 22px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mobile-social-links__item:last-child::before {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 277px;
+  display: block;
+  height: 22px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mobile-social-links__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.mobile-social-links__link {
   color: #2196f3;
 }
 
@@ -528,7 +590,7 @@ body {
   padding: 0;
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 768px) {
   .benefits__item:not(:last-child) {
     margin-bottom: 30px;
   }
@@ -1118,7 +1180,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 450px;
-  max-height: 609px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   background-color: #ffffff;
@@ -1126,7 +1187,7 @@ body {
 
 @media screen and (min-width: 480px) {
   .modal {
-    max-width: 450px;
+    width: 450px;
   }
 }
 
@@ -1189,7 +1250,7 @@ body {
 .modal-form__input {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding-left: 42px;
-  width: 370px;
+  width: 100%;
   height: 40px;
   outline: transparent;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -1234,7 +1295,7 @@ body {
 .textarea__item {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 12px 16px;
-  width: 370px;
+  width: 100%;
   height: 120px;
   resize: none;
   outline: transparent;

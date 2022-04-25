@@ -1,8 +1,10 @@
 .menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 15px;
   display: block;
-  margin-left: auto;
   padding: 0;
-  z-index: 10;
+  z-index: 11;
 
   background-color: transparent;
   border: transparent;
@@ -11,19 +13,24 @@
   &:focus {
     fill: $accent-color;
   }
+
   @media screen and (min-width: $tablet) {
     display: none;
   }
 }
 
-.menu-btn__icon-close {
+.menu-btn__icon--open {
+  opacity: 1;
+}
+
+.menu-btn__icon--close {
   opacity: 0;
 }
 
-.menu-btn.is-open .menu-btn__icon-close {
+.menu-btn.is-active .menu-btn__icon--open {
   opacity: 0;
 }
 
-.menu-btn.is-open .menu-btn__icon-open {
+.menu-btn.is-active .menu-btn__icon--close {
   opacity: 1;
 }
