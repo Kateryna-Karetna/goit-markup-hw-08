@@ -10,3 +10,7 @@ body {
   color: $text-color;
   background-color: #ffffff;
 }
+
+.no-scroll {
+  overflow-y: hidden;
+}
