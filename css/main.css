@@ -88,19 +88,19 @@ body {
 
 @media screen and (min-width: 480px) {
   .container {
-    max-width: 450px;
+    max-width: 480px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 738px;
+    max-width: 768px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container {
-    max-width: 1170px;
+    max-width: 1200px;
   }
 }
 
@@ -301,12 +301,12 @@ body {
 }
 
 .menu-btn {
-  position: fixed;
+  position: absolute;
   top: 10px;
   right: 15px;
   display: block;
   padding: 0;
-  z-index: 11;
+  z-index: 6;
   background-color: transparent;
   border: transparent;
 }
@@ -329,6 +329,10 @@ body {
   opacity: 0;
 }
 
+.menu-btn.is-active {
+  position: fixed;
+}
+
 .menu-btn.is-active .menu-btn__icon--open {
   opacity: 0;
 }
@@ -343,7 +347,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 10;
+  z-index: 5;
   transform: translateX(100%);
   visibility: hidden;
   pointer-events: none;
@@ -360,10 +364,9 @@ body {
 .mobile-menu {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 48px 40px;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -372,7 +375,7 @@ body {
   }
 }
 
-.mobile-nav {
+.mobile-nav__item {
   font-weight: 500;
   font-size: 40px;
   line-height: 1.18;
@@ -407,6 +410,10 @@ body {
 }
 
 .mobile-contacts__link--active {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
   color: #2196f3;
 }
 
@@ -1163,6 +1170,7 @@ body {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
+  z-index: 7;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
