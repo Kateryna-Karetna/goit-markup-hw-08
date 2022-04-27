@@ -1434,28 +1434,78 @@ body {
 
 .btn {
   display: flex;
-  justify-content: center;
 }
 
-.btn__wrapper:not(:last-child) {
-  margin-right: 8px;
+@media screen and (max-width: 767px) {
+  .btn {
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .btn {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .btn {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btn__wrapper:not(:last-child) {
+    margin-right: 8px;
+    margin-bottom: 15px;
+  }
+  .btn__wrapper:nth-child(3) {
+    margin-right: 0;
+  }
+  .btn__wrapper:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .btn__wrapper:not(:last-child) {
+    margin-right: 8px;
+  }
 }
 
 .btn__item {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 50px;
-  margin-bottom: -30px;
-  margin-left: -30px;
+@media screen and (min-width: 768px) {
+  .portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -30px;
+    margin-left: -30px;
+  }
 }
 
-.portfolio__item {
-  margin-bottom: 30px;
-  margin-left: 30px;
+@media screen and (max-width: 767px) {
+  .portfolio__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio__item {
+    width: 354px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio__item {
+    width: 370px;
+  }
 }
 
 .portfolio__link {
@@ -1476,7 +1526,7 @@ body {
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
-  padding: 63px 24px;
+  padding: 77px 24px;
   line-height: 1.56;
   color: #ffffff;
   background-color: rgba(33, 150, 243, 0.9);
@@ -1487,9 +1537,39 @@ body {
   transform: translateY(0);
 }
 
+@media screen and (min-width: 768px) {
+  .card__text {
+    padding: 49px 24px 77px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card__text {
+    padding: 63px 24px;
+  }
+}
+
 .card {
   position: relative;
   overflow: hidden;
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .card img {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card img {
+    width: 354px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card img {
+    width: 370px;
+  }
 }
 
 .card-thumb {

@@ -2,11 +2,43 @@
   @extend %list;
 
   display: flex;
-  justify-content: center;
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+  }
 }
 
-.btn__wrapper:not(:last-child) {
-  margin-right: 8px;
+.btn__wrapper {
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-right: 8px;
+      margin-bottom: 15px;
+    }
+
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
 }
 
 .btn__item {
@@ -19,16 +51,31 @@
 .portfolio {
   @extend %list;
 
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 50px;
-  margin-bottom: -30px;
-  margin-left: -30px;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -30px;
+    margin-left: -30px;
+  }
 }
 
 .portfolio__item {
-  margin-bottom: $main-size;
-  margin-left: $main-size;
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: $main-size;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 354px;
+
+    margin-bottom: 30px;
+    margin-left: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 370px;
+  }
 }
 
 .portfolio__link {
@@ -53,7 +100,7 @@
   transition: transform $anim-duration $cubic;
 
   display: flex;
-  padding: 63px 24px;
+  padding: 77px 24px;
 
   line-height: 1.56;
 
@@ -64,11 +111,33 @@
   .portfolio__link:focus & {
     transform: translateY(0);
   }
+
+  @media screen and (min-width: $tablet) {
+    padding: 49px 24px 77px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 63px 24px;
+  }
 }
 
 .card {
   position: relative;
   overflow: hidden;
+}
+
+.card img {
+  @media screen and (min-width: $mobile) and (max-width: 767px) {
+    width: 450px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 354px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 370px;
+  }
 }
 
 .card-thumb {
