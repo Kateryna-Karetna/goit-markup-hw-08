@@ -81,7 +81,9 @@
 .portfolio__link {
   transition: box-shadow $anim-duration $cubic;
 
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   &:hover,
   &:focus {
@@ -141,6 +143,7 @@
 }
 
 .card-thumb {
+  flex-grow: 1;
   padding: 20px 24px;
 
   border-right-width: 1px;
@@ -158,6 +161,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
+  letter-spacing: 0.06em;
 
   color: $title-color;
 }

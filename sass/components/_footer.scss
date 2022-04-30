@@ -1,11 +1,11 @@
 .footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
   background-color: $bgc-color;
 }
 
 .footer__container {
-  padding-top: 60px;
-  padding-bottom: 60px;
-
   @media screen and (min-width: $desktop) {
     display: flex;
     align-items: baseline;
@@ -13,11 +13,12 @@
 }
 
 .footer__wrapper {
+  margin-bottom: 60px;
+
   @media screen and (min-width: $tablet) {
     display: flex;
     align-items: baseline;
-    justify-content: center;
-    margin-bottom: 60px;
+    justify-content: space-around;
   }
 
   @media screen and (min-width: $desktop) {
@@ -30,10 +31,6 @@
 
   @media screen and (max-width: 767px) {
     margin-bottom: 60px;
-  }
-
-  @media screen and (min-width: $tablet) and (max-width: 1199px) {
-    margin-right: 165px;
   }
 
   @media screen and (min-width: $desktop) {
@@ -88,7 +85,6 @@
 }
 
 .join {
-  margin-bottom: 60px;
   text-align: center;
 
   @media screen and (min-width: $tablet) {

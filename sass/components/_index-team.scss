@@ -17,8 +17,6 @@
 .team {
   @extend %list;
 
-  margin-top: $main-size;
-
   @media screen and (min-width: $tablet) {
     display: flex;
     flex-wrap: wrap;
